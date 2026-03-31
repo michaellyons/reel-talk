@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: #fafafa;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.venue {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* About Section */
+.about {
+  background: #fff;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Films Section */
+.films h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.film-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.film-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.film-poster-placeholder {
+  aspect-ratio: 2/3;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-poster-placeholder span {
+  font-size: 4rem;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.film-info {
+  padding: 1.5rem;
+}
+
+.film-info h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.director {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.guest {
+  font-size: 0.85rem;
+  color: #9a7b4f;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.ticket-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  font-family: inherit;
+}
+
+.ticket-btn:hover {
+  background: #333;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #1a1a1a;
+}
+
+.modal-poster-placeholder {
+  aspect-ratio: 2/3;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.modal-poster-placeholder span {
+  font-size: 5rem;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.modal h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.modal-director {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.modal-date {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.modal-guest {
+  font-size: 0.9rem;
+  color: #9a7b4f;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.synopsis {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.modal-ticket-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  font-family: inherit;
+  width: 100%;
+}
+
+.modal-ticket-btn:hover {
+  background: #333;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: #888;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .film-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about {
+    padding: 1.5rem;
+  }
+  
+  .modal {
+    padding: 1.5rem;
+  }
+}
